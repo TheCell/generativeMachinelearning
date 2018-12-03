@@ -1,50 +1,71 @@
-let audioContext;
-let mic;
-let pitch;
+function setup(){
 
-let resetUserCanvas = true;
-
-const scale = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
-
-function setup()
-{
 	noCanvas();
-	audioContext = getAudioContext();
-	mic = new p5.AudioIn();
-	mic.start(startPitch);
 
-	//p5UserSketch = new p5(userSketch);
+
 }
 
-function startPitch()
-{
-	pitch = ml5.pitchDetection('./model/', audioContext , mic.stream, modelLoaded);
-}
 
-function modelLoaded()
-{
-	select('#status').html('Model Loaded');
-	getPitch();
-}
+let sketchColor = function(sketch){
 
-function getPitch()
-{
-	pitch.getPitch(function(err, frequency)
+	sketch.audioContext;
+	sketch.mic;
+	sketch.pitch;
+	
+	//sketch.resetUserCanvas = true;
+	
+	sketch.scale = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+	
+	sketch.setup = function()
 	{
-		if (frequency)
+		sketch.createCanvas(800,500).parent('cointainer-color');
+		sketch.background(230);
+		sketch.audioContext = getAudioContext();
+		sketch.mic = new p5.AudioIn();
+		sketch.mic.start(sketch.startPitch);
+	
+		//p5UserSketch = new p5(userSketch);
+	}
+	
+	sketch.startPitch = function ()
+	{
+		sketch.pitch = ml5.pitchDetection('./model/', sketch.audioContext , sketch.mic.stream, sketch.modelLoaded);
+	}
+	
+	sketch.modelLoaded = function ()
+	{
+		//sketch.select('#status').html('Model Loaded');
+		sketch.getPitch();
+	}
+	
+	sketch.getPitch = function ()
+	{
+		sketch.pitch.getPitch(function(err, frequency)
 		{
-			//select('#result').html(frequency);
-			//console.log(frequency);
-			let midiNum = freqToMidi(frequency);
-			currentNote = scale[midiNum % 12];
-			select('#currentNote').html(currentNote);
-			 console.log(currentNote);
-		}
-		else
-		{
-		select('#currentNote').html('No pitch detected');
-		}
-		getPitch();
-	})
-}
+			if (frequency)
+			{
+				midiNum = freqToMidi(frequency);
+				currentNote = sketch.scale[midiNum % 12];
+				if(currentNote == 'C'){
+					sketch.noteC(frequency);
+				}
+				sketch.delay(frequency);
+			}
+			
+			sketch.getPitch();
+		})
+	}
+	
+	sketch.noteC = function (frequency){
+		sketch.ellipse(0, 0, frequency/2, frequency/2);
+		sketch.fill(255,0,0);
+		sketch.noStroke();
+	}
 
+	sketch.delay = function(freq){
+
+		console.log(freq);
+	}
+
+}
+p5SketchColor = new p5(sketchColor);
