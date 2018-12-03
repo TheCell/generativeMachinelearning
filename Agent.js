@@ -1,3 +1,5 @@
+"use strict";
+
 class Agent
 {
 	constructor(
@@ -6,7 +8,8 @@ class Agent
 		spawnX = middlePointX,
 		spawnY = middlePointY,
 		angle = random(0, Math.PI * 2),
-		moveSpeed = options.moveSpeed)
+		moveSpeed = options.moveSpeed,
+		visualProperties)
 	{
 		// set properties
 		this.moveSpeed = moveSpeed;
@@ -14,6 +17,7 @@ class Agent
 		this.tileWidth = tileWidth;
 		this.tileHeight = tileHeight;
 		this.angle = angle;
+		this.visualProperties = visualProperties;
 
 		// set middle point
 		this.location = createVector(
