@@ -4,7 +4,7 @@ function setup(){
 
 
 }
-
+let frequencyGlobal = 0;
 
 let sketchColor = function(sketch){
 
@@ -23,8 +23,13 @@ let sketchColor = function(sketch){
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
-	
 		//p5UserSketch = new p5(userSketch);
+	}
+
+	sketch.draw = function(){
+
+		//console.log(frequencyGlobal);
+
 	}
 	
 	sketch.startPitch = function ()
@@ -44,14 +49,13 @@ let sketchColor = function(sketch){
 		{
 			if (frequency)
 			{
+				frequencyGlobal = frequency;
 				midiNum = freqToMidi(frequency);
 				currentNote = sketch.scale[midiNum % 12];
 				if(currentNote == 'C'){
 					sketch.noteC(frequency);
 				}
-				sketch.delay(frequency);
 			}
-			
 			sketch.getPitch();
 		})
 	}
@@ -62,10 +66,6 @@ let sketchColor = function(sketch){
 		sketch.noStroke();
 	}
 
-	sketch.delay = function(freq){
-
-		console.log(freq);
-	}
 
 }
 p5SketchColor = new p5(sketchColor);
