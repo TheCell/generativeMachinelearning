@@ -4,6 +4,8 @@ let pitch;
 
 let resetUserCanvas = true;
 
+const scale = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
 function setup()
 {
 	noCanvas();
@@ -11,7 +13,7 @@ function setup()
 	mic = new p5.AudioIn();
 	mic.start(startPitch);
 
-	p5UserSketch = new p5(userSketch);
+	//p5UserSketch = new p5(userSketch);
 }
 
 function startPitch()
@@ -31,12 +33,18 @@ function getPitch()
 	{
 		if (frequency)
 		{
-			select('#result').html(frequency);
+			//select('#result').html(frequency);
+			//console.log(frequency);
+			let midiNum = freqToMidi(frequency);
+			currentNote = scale[midiNum % 12];
+			select('#currentNote').html(currentNote);
+			 console.log(currentNote);
 		}
 		else
 		{
-			select('#result').html('No pitch detected');
+		select('#currentNote').html('No pitch detected');
 		}
 		getPitch();
 	})
 }
+
