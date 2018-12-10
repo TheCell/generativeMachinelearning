@@ -40,7 +40,7 @@ class CircleAgent
 		ctx.fill(this.visualProperties.color);
 		ctx.noStroke();
 		
-		ctx.ellipse(this.location.x, this.location.y, window.frequencyGlobal / 4, window.frequencyGlobal / 4);
+		ctx.ellipse(this.location.x, this.location.y, window.frequencyGlobal / 16, window.frequencyGlobal / 16);
 	}
 
 	updateCycle()

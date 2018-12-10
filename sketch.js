@@ -25,7 +25,7 @@ let sketchColor = function(sketch)
 	sketch.setup = function()
 	{
 		sketch.ctx = sketch.createCanvas(800,500).parent('cointainer-color');
-		sketch.background(230);
+		sketch.background(COLORPALETTE[COLORPALETTE.length * Math.random() << 0]);
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
@@ -35,7 +35,7 @@ let sketchColor = function(sketch)
 				sketch.width / 4,
 				sketch.height / 2,
 				2,
-				new VisualProperties(SHAPES.circle, "#881188")
+				new VisualProperties(SHAPES.circle)
 			)
 		);
 		
@@ -45,7 +45,7 @@ let sketchColor = function(sketch)
 				sketch.width / 2,
 				sketch.height / 2,
 				1,
-				new VisualProperties(SHAPES.circle, "#001188")
+				new VisualProperties(SHAPES.circle)
 			)
 		);
 		//p5UserSketch = new p5(userSketch);
@@ -88,7 +88,7 @@ let sketchColor = function(sketch)
 							sketch.width / 2,
 							sketch.height / 2,
 							4 * Math.random(),
-							new VisualProperties(SHAPES.circle, color(random(255),random(255),random(255)))
+							new VisualProperties(SHAPES.circle)
 						)
 					);
 				}
