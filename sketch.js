@@ -56,8 +56,8 @@ let sketchColor = function(sketch)
 			if (frequency)
 			{
 				window.frequencyGlobal = frequency;
-				midiNum = freqToMidi(frequency);
-				currentNote = sketch.scale[midiNum % 12];
+				let midiNum = freqToMidi(frequency);
+				let currentNote = sketch.scale[midiNum % 12];
 				if(currentNote == 'C'){
 					sketch.noteC(frequency);
 				}
@@ -119,4 +119,4 @@ function spawnNewAgent(agent)
 	window.activeAgents.push(agent);
 }
 
-p5SketchColor = new p5(sketchColor);
+let p5SketchColor = new p5(sketchColor);
