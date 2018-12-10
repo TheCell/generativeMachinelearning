@@ -34,7 +34,7 @@ let sketchColor = function(sketch)
 			new CircleAgent(
 				sketch.width / 4,
 				sketch.height / 2,
-				3,
+				2,
 				new VisualProperties(SHAPES.circle, "#881188")
 			)
 		);
@@ -44,7 +44,7 @@ let sketchColor = function(sketch)
 			new CircleAgent(
 				sketch.width / 2,
 				sketch.height / 2,
-				3,
+				1,
 				new VisualProperties(SHAPES.circle, "#001188")
 			)
 		);
@@ -56,7 +56,7 @@ let sketchColor = function(sketch)
 		//console.log(window.frequencyGlobal);
 		updateAgents(window.activeAgents);
 		cleanDeadAgents(window.activeAgents, false);
-		sketch.background(200);
+		//sketch.background(200);
 		drawAgents(window.activeAgents, sketch);
 	}
 	
@@ -80,23 +80,22 @@ let sketchColor = function(sketch)
 				window.frequencyGlobal = frequency;
 				let midiNum = freqToMidi(frequency);
 				let currentNote = sketch.scale[midiNum % 12];
-				/*
-				if(currentNote == 'C'){
-					sketch.noteC(frequency);
+				if(currentNote == 'C')
+				{
+					spawnNewAgent
+					(
+						new CircleAgent(
+							sketch.width / 2,
+							sketch.height / 2,
+							4 * Math.random(),
+							new VisualProperties(SHAPES.circle, color(random(255),random(255),random(255)))
+						)
+					);
 				}
-				*/
 			}
 			sketch.getPitch();
 		})
 	}
-	
-	/*
-	sketch.noteC = function (frequency){
-		sketch.ellipse(0, 0, frequency/2, frequency/2);
-		sketch.fill(255,0,0);
-		sketch.noStroke();
-	}
-	*/
 }
 
 function updateAgents(arrayWithAgents)
