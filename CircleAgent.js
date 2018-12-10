@@ -1,6 +1,6 @@
 "use strict";
 
-class Agent
+class CircleAgent
 {
 	constructor(
 		middlePointX,
@@ -32,14 +32,15 @@ class Agent
 		{
 			return;
 		}
+
+		ctx.fill(this.visualProperties.color);
+		ctx.noStroke();
+		
+		ctx.ellipse(this.location.x, this.location.y, window.frequencyGlobal, window.frequencyGlobal);
 	}
 
 	updateCycle()
 	{
-		console.log("Im a master agent, killing myself");
-
-		this.agentAlive = false;
-
 		if (!this.agentAlive)
 		{
 			return;

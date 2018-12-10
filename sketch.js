@@ -16,6 +16,7 @@ let sketchColor = function(sketch)
 	sketch.audioContext;
 	sketch.mic;
 	sketch.pitch;
+	sketch.ctx;
 	
 	//sketch.resetUserCanvas = true;
 	
@@ -23,11 +24,30 @@ let sketchColor = function(sketch)
 	
 	sketch.setup = function()
 	{
-		sketch.createCanvas(800,500).parent('cointainer-color');
+		sketch.ctx = sketch.createCanvas(800,500).parent('cointainer-color');
 		sketch.background(230);
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
+		spawnNewAgent
+		(
+			new CircleAgent(
+				sketch.width / 4,
+				sketch.height / 2,
+				3,
+				new VisualProperties(SHAPES.circle, "#881188")
+			)
+		);
+		
+		spawnNewAgent
+		(
+			new CircleAgent(
+				sketch.width / 2,
+				sketch.height / 2,
+				3,
+				new VisualProperties(SHAPES.circle, "#001188")
+			)
+		);
 		//p5UserSketch = new p5(userSketch);
 	}
 
@@ -36,6 +56,8 @@ let sketchColor = function(sketch)
 		//console.log(window.frequencyGlobal);
 		updateAgents(window.activeAgents);
 		cleanDeadAgents(window.activeAgents, false);
+		sketch.background(200);
+		drawAgents(window.activeAgents, sketch);
 	}
 	
 	sketch.startPitch = function ()
@@ -58,19 +80,23 @@ let sketchColor = function(sketch)
 				window.frequencyGlobal = frequency;
 				let midiNum = freqToMidi(frequency);
 				let currentNote = sketch.scale[midiNum % 12];
+				/*
 				if(currentNote == 'C'){
 					sketch.noteC(frequency);
 				}
+				*/
 			}
 			sketch.getPitch();
 		})
 	}
 	
+	/*
 	sketch.noteC = function (frequency){
 		sketch.ellipse(0, 0, frequency/2, frequency/2);
 		sketch.fill(255,0,0);
 		sketch.noStroke();
 	}
+	*/
 }
 
 function updateAgents(arrayWithAgents)
@@ -117,6 +143,14 @@ function cleanDeadAgents(arrayWithAgents, returnObjects = false)
 function spawnNewAgent(agent)
 {
 	window.activeAgents.push(agent);
+}
+
+function drawAgents(arrayWithAgents, ctx)
+{
+	arrayWithAgents.forEach( function ( element, index, arr)
+	{
+		element.drawLocation(ctx);
+	});
 }
 
 let p5SketchColor = new p5(sketchColor);
