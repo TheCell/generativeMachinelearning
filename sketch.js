@@ -3,9 +3,6 @@
 function setup()
 {
 	noCanvas();
-	let exampleOfVisualProperties = new VisualProperties(
-		SHAPES.circle,
-		color("red"));
 }
 
 window.frequencyGlobal = 0;
@@ -29,34 +26,12 @@ let sketchColor = function(sketch)
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
-		spawnNewAgent
-		(
-			new CircleAgent(
-				sketch.width / 4,
-				sketch.height / 2,
-				2,
-				new VisualProperties(SHAPES.circle)
-			)
-		);
-		
-		spawnNewAgent
-		(
-			new CircleAgent(
-				sketch.width / 2,
-				sketch.height / 2,
-				1,
-				new VisualProperties(SHAPES.circle)
-			)
-		);
-		//p5UserSketch = new p5(userSketch);
 	}
 
 	sketch.draw = function()
 	{
-		//console.log(window.frequencyGlobal);
 		updateAgents(window.activeAgents);
 		cleanDeadAgents(window.activeAgents, false);
-		//sketch.background(200);
 		drawAgents(window.activeAgents, sketch);
 	}
 	
@@ -67,7 +42,6 @@ let sketchColor = function(sketch)
 	
 	sketch.modelLoaded = function ()
 	{
-		//sketch.select('#status').html('Model Loaded');
 		sketch.getPitch();
 	}
 	
@@ -88,7 +62,7 @@ let sketchColor = function(sketch)
 							sketch.width / 2,
 							sketch.height / 2,
 							4 * Math.random(),
-							new VisualProperties(SHAPES.circle)
+							new VisualProperties()
 						)
 					);
 				}

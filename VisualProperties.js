@@ -19,9 +19,9 @@ let COLORPALETTE = randomProperty(
 
 class VisualProperties
 {
-    constructor(shape, color = COLORPALETTE[COLORPALETTE.length * Math.random() << 0])
+    constructor(color = COLORPALETTE[COLORPALETTE.length * Math.random() << 0])
     {
-        this.shape = shape;
+        //this.shape = shape;
         this.color = color;
     }
 }
