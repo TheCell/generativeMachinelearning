@@ -16,7 +16,9 @@ class Agent
 		this.agentAlive = true;
 		this.angle = angle;
 		this.visualProperties = visualProperties;
-
+		this.points = [];
+		this.livecycles = 200;
+		
 		// set middle point
 		this.location = createVector(
 			middlePointX,
@@ -24,6 +26,8 @@ class Agent
 		this.spawnLocation = createVector(
 			spawnX,
 			spawnY);
+
+		this.points[0] = this.location;
 	}
 
 	drawLocation(ctx)
@@ -44,5 +48,22 @@ class Agent
 		{
 			return;
 		}
+
+		let newX = this.points[this.points.length - 1].x
+			+ (cos(this.angle) * this.moveSpeed);
+        let newY = this.points[this.points.length - 1].y
+            + (sin(this.angle) * this.moveSpeed);
+
+        this.location = createVector(
+            newX,
+            newY
+        );
+
+        this.points.push(this.location);
+        this.livecycles = this.livecycles - 1;
+        if (this.livecycles < 0)
+        {
+            this.agentAlive = false;
+        }
 	}
 }
