@@ -7,6 +7,8 @@ function setup()
 
 window.frequencyGlobal = 0;
 window.activeAgents = [];
+let numberOfModes = 1;
+window.currentMode = getRandomInt(numberOfModes); // 0 based
 
 let sketchColor = function(sketch)
 {
@@ -26,6 +28,7 @@ let sketchColor = function(sketch)
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
+		sketch.ctx.id("generativeCanvas");
 	}
 
 	sketch.draw = function()
@@ -54,17 +57,56 @@ let sketchColor = function(sketch)
 				window.frequencyGlobal = frequency;
 				let midiNum = freqToMidi(frequency);
 				let currentNote = sketch.scale[midiNum % 12];
-				if(currentNote == 'C')
+
+				// BEHOLD: this is where the construction zone begins. I am sorry
+				switch(currentNote)
 				{
-					spawnNewAgent
-					(
-						new CircleAgent(
-							sketch.width / 2,
-							sketch.height / 2,
-							4 * Math.random(),
-							new VisualProperties()
-						)
-					);
+					case 'C':
+						if (window.currentMode == 0)
+						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties()
+							));
+						}
+					break;
+					case 'C#':
+					break;
+					case 'D':
+					break;
+					case 'D#':
+					break;
+					case 'E':
+						if (window.currentMode == 0)
+						{
+							spawnNewAgent(
+								new CircleAgentMode0E(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties()
+							));
+						}
+					break;
+					case 'F':
+					break;
+					case 'F#':
+					break;
+					case 'G':
+					break;
+					case 'G#':
+					break;
+					case 'A':
+					break;
+					case 'A#':
+					break;
+					case 'B':
+					break;
+					default:
+					break;
 				}
 			}
 			sketch.getPitch();
@@ -124,6 +166,11 @@ function drawAgents(arrayWithAgents, ctx)
 	{
 		element.drawLocation(ctx);
 	});
+}
+
+function getRandomInt(max)
+{
+	return Math.floor(Math.random() * Math.floor(max));
 }
 
 let p5SketchColor = new p5(sketchColor);

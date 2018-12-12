@@ -23,5 +23,6 @@ class VisualProperties
     {
         //this.shape = shape;
         this.color = color;
+        this.width = 10;
     }
 }
