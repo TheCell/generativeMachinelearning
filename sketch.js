@@ -11,8 +11,6 @@ let numberOfModes = 2;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
 window.fadeDrawing = false;
 
-console.log(`Mode: ${window.currentMode}, fading: ${window.fadeDrawing}`);
-
 if (window.currentMode == 1)
 {
 	if (Math.random() > 0.5)
@@ -20,6 +18,8 @@ if (window.currentMode == 1)
 		window.fadeDrawing = true;
 	}
 }
+
+console.log(`Mode: ${window.currentMode}, fading: ${window.fadeDrawing}`);
 
 let sketchColor = function(sketch)
 {
@@ -64,16 +64,17 @@ let sketchColor = function(sketch)
 	{
 		sketch.pitch.getPitch(function(err, frequency)
 		{
+			if (window.fadeDrawing)
+			{
+				sketch.background(sketch.backgroundColor.slice(0, 7) + "11");
+			}
+
 			if (frequency)
 			{
 				window.frequencyGlobal = frequency;
 				let midiNum = freqToMidi(frequency);
 				let currentNote = sketch.scale[midiNum % 12];
 
-				if (window.fadeDrawing)
-				{
-					sketch.background(sketch.backgroundColor.slice(0, 7) + "11");
-				}
 				// BEHOLD: this is where the construction zone begins. I am sorry
 				switch(currentNote)
 				{
