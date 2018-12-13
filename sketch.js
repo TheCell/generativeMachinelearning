@@ -9,6 +9,15 @@ window.frequencyGlobal = 0;
 window.activeAgents = [];
 let numberOfModes = 2;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
+window.fadeDrawing = false;
+
+if (window.currentMode == 1)
+{
+	if (Math.random() > 0.5)
+	{
+		window.fadeDrawing = true;
+	}
+}
 
 let sketchColor = function(sketch)
 {
@@ -16,6 +25,7 @@ let sketchColor = function(sketch)
 	sketch.mic;
 	sketch.pitch;
 	sketch.ctx;
+	sketch.backgroundColor = COLORPALETTE[COLORPALETTE.length * Math.random() << 0];
 	
 	//sketch.resetUserCanvas = true;
 	
@@ -24,7 +34,7 @@ let sketchColor = function(sketch)
 	sketch.setup = function()
 	{
 		sketch.ctx = sketch.createCanvas(800,500).parent('cointainer-color');
-		sketch.background(COLORPALETTE[COLORPALETTE.length * Math.random() << 0]);
+		sketch.background(sketch.backgroundColor);
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
@@ -58,6 +68,10 @@ let sketchColor = function(sketch)
 				let midiNum = freqToMidi(frequency);
 				let currentNote = sketch.scale[midiNum % 12];
 
+				if (window.fadeDrawing)
+				{
+					sketch.background(sketch.backgroundColor.slice(0, 7) + "11");
+				}
 				// BEHOLD: this is where the construction zone begins. I am sorry
 				switch(currentNote)
 				{
