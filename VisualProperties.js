@@ -25,7 +25,14 @@ let COLORPALETTE = randomProperty(
         "palette10": ["#B4D04FFF","#9BC0DCFF", "#467E9BFF", "#5D97B6FF", "#EBF0F3FF"],
         "palette11": ["#9895B4FF","#B39AB7FF", "#D297B3FF", "#FC99ADFF", "#A5AAD4FF"],
         "palette12": ["#000026FF","#03A596FF", "#F0AA21FF", "#F38626FF", "#F0412CFF"],
-        "palette13": ["#FFC15EFF","#F7B05BFF", "#F7934CFF", "#CC5803FF", "#1F1300FF"]
+        "palette13": ["#FFC15EFF","#F7B05BFF", "#F7934CFF", "#CC5803FF", "#1F1300FF"],
+        "palette14": ["#3F6335FF","#B7D46DFF", "#FFEABFFF", "#C9B679FF", "#05142BFF"],
+        "palett15": ["#700E01FF","#F22602FF", "#FFFFFFFF", "#B0B0B0FF", "#0A0A0AFF"],
+        "palette16": ["#F23C50FF","#FFCB05FF", "#E9F1DFFF", "#4AD9D9FF", "#36B1BFFF"],
+        "palette17": ["#FA7784FF","#FC948FFF", "#24AEB4FF", "#007A9BFF", "#002358FF"],
+        "palette18": ["#642379FF","#FB5D78FF", "#E81F7AFF", "#42F3F5FF", "#2DF3CCFF"],
+        "palette19": ["#730117FF","#191E24FF", "#008C5DFF", "#00593BFF", "#022417FF"],
+        "palette20": ["#0E5700FF","#FFB21DFF", "#1BA300FF", "#34E000FF", "#FFF200FF"]
     });
     //"palette2": ["#FF","#FF", "#FF", "#FF", "#FF"],
 
