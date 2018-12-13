@@ -7,7 +7,7 @@ function setup()
 
 window.frequencyGlobal = 0;
 window.activeAgents = [];
-let numberOfModes = 1;
+let numberOfModes = 2;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
 
 let sketchColor = function(sketch)
@@ -72,12 +72,41 @@ let sketchColor = function(sketch)
 									new VisualProperties(1)
 							));
 						}
+						else if (window.currentMode == 1)
+						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(),
+									"up"
+							));
+						}
 					break;
 					case 'C#':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'D':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'D#':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'E':
 						if (window.currentMode == 0)
@@ -90,20 +119,73 @@ let sketchColor = function(sketch)
 									new VisualProperties()
 							));
 						}
+						else if (window.currentMode == 1)
+						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(),
+									"down"
+							));
+						}
 					break;
 					case 'F':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'F#':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'G':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'G#':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'A':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'A#':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					case 'B':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
 					break;
 					default:
 					break;
