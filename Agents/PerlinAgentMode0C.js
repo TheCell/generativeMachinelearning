@@ -30,8 +30,8 @@ class PerlinAgentMode0C
         this.noiseSeed = Math.floor(Math.random() * 10000);
         this.mapReduction = 100;
 
-        middlePointX = middlePointX - 100 + Math.floor(100 * Math.random());
-        middlePointY = middlePointY - 100 + Math.floor(100 * Math.random());
+        middlePointX = middlePointX - 50 + Math.floor(100 * Math.random());
+        middlePointY = middlePointY - 50 + Math.floor(100 * Math.random());
 
 		// set middle point
 		this.location = createVector(
