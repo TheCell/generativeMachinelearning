@@ -69,7 +69,7 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties()
+									new VisualProperties(1)
 							));
 						}
 					break;
