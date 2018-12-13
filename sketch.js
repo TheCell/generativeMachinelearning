@@ -11,6 +11,8 @@ let numberOfModes = 2;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
 window.fadeDrawing = false;
 
+console.log(`Mode: ${window.currentMode}, fading: ${window.fadeDrawing}`);
+
 if (window.currentMode == 1)
 {
 	if (Math.random() > 0.5)
@@ -78,13 +80,16 @@ let sketchColor = function(sketch)
 					case 'C':
 						if (window.currentMode == 0)
 						{
-							spawnNewAgent(
-								new CircleAgentMode0C(
-									sketch.width / 2,
-									sketch.height / 2,
-									1 + 3 * Math.random(),
-									new VisualProperties(1)
-							));
+							if (window.activeAgents.length < 15)
+							{
+								spawnNewAgent(
+									new CircleAgentMode0C(
+										sketch.width / 2,
+										sketch.height / 2,
+										1 + 3 * Math.random(),
+										new VisualProperties(1)
+								));	
+							}
 						}
 						else if (window.currentMode == 1)
 						{
@@ -139,13 +144,16 @@ let sketchColor = function(sketch)
 					case 'E':
 						if (window.currentMode == 0)
 						{
-							spawnNewAgent(
-								new CircleAgentMode0E(
-									sketch.width / 2,
-									sketch.height / 2,
-									1 + 3 * Math.random(),
-									new VisualProperties()
-							));
+							if (window.activeAgents.length < 7)
+							{
+								spawnNewAgent(
+									new CircleAgentMode0E(
+										sketch.width / 2,
+										sketch.height / 2,
+										1 + 3 * Math.random(),
+										new VisualProperties()
+								));
+							}
 						}
 						else if (window.currentMode == 1)
 						{
