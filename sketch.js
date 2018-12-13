@@ -80,7 +80,7 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									new VisualProperties(),
-									"up"
+									"left"
 							));
 						}
 					break;
@@ -90,6 +90,13 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties()
+							));
 						}
 					break;
 					case 'D':
@@ -106,6 +113,13 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties()
+							));
 						}
 					break;
 					case 'E':
@@ -127,7 +141,7 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									new VisualProperties(),
-									"down"
+									"right"
 							));
 						}
 					break;
@@ -137,6 +151,14 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(),
+									"up"
+							));
 						}
 					break;
 					case 'F#':
@@ -145,6 +167,14 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(),
+									"down"
+							));
 						}
 					break;
 					case 'G':

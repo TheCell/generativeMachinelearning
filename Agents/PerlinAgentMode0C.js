@@ -19,6 +19,12 @@ class PerlinAgentMode0C
         this.visualProperties = visualProperties;
         this.points = [];
         this.livecycles = 200;
+        if (typeof(direction) == "undefined")
+        {
+            let directs = {"up": "up", "right": "right", "down": "down", "left": "left"};
+            let keys = Object.keys(directs)
+            direction = directs[keys[ keys.length * Math.random() << 0]];
+        }
         this.direction = direction;
 
         this.noiseSeed = Math.floor(Math.random() * 10000);
@@ -66,7 +72,28 @@ class PerlinAgentMode0C
 
         if (this.direction == "up")
         {
-
+            newX = startX
+			+ (cos(
+				map(
+					noise(
+						(startX + this.noiseSeed) /  this.mapReduction,
+						(startY + this.noiseSeed) /  this.mapReduction),
+					0,
+					1,
+					0,
+					Math.PI * 2))
+			* this.moveSpeed);
+		    newY = startY
+			- (sin(
+				map(
+					noise(
+						(startX + this.noiseSeed) /  this.mapReduction,
+						(startY + this.noiseSeed) /  this.mapReduction),
+					0,
+					1,
+					0,
+					Math.PI * 2))
+            * this.moveSpeed);
         }
         else if (this.direction == "right")
         {
@@ -81,7 +108,7 @@ class PerlinAgentMode0C
 					0,
 					Math.PI * 2))
 			* this.moveSpeed);
-		newY = startY
+		    newY = startY
 			- (sin(
 				map(
 					noise(
@@ -95,7 +122,28 @@ class PerlinAgentMode0C
         }
         else if (this.direction == "down")
         {
-            
+            newX = startX
+			- (cos(
+				map(
+					noise(
+						(startX + this.noiseSeed) /  this.mapReduction,
+						(startY + this.noiseSeed) /  this.mapReduction),
+					0,
+					1,
+					0,
+					Math.PI * 2))
+			* this.moveSpeed);
+		    newY = startY
+			+ (sin(
+				map(
+					noise(
+						(startX + this.noiseSeed) /  this.mapReduction,
+						(startY + this.noiseSeed) /  this.mapReduction),
+					0,
+					1,
+					0,
+					Math.PI * 2))
+            * this.moveSpeed);
         }
         else if (this.direction == "left")
         {
