@@ -68,108 +68,50 @@ class PerlinAgentMode0C
         let startY = this.points[this.points.length - 1].y;
 
         let newX;
-        let newY;
+		let newY;
+		
+		let xMultiplicator = 1;
+		let yMultiplicator = 1;
 
         if (this.direction == "up")
         {
-            newX = startX
-			+ (cos(
-				map(
-					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
-					0,
-					1,
-					0,
-					Math.PI * 2))
-			* this.moveSpeed);
-		    newY = startY
-			- (sin(
-				map(
-					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
-					0,
-					1,
-					0,
-					Math.PI * 2))
-            * this.moveSpeed);
+			yMultiplicator = -1;
         }
         else if (this.direction == "right")
         {
-            newX = startX
-			- (cos(
-				map(
-					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
-					0,
-					1,
-					0,
-					Math.PI * 2))
-			* this.moveSpeed);
-		    newY = startY
-			- (sin(
-				map(
-					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
-					0,
-					1,
-					0,
-					Math.PI * 2))
-            * this.moveSpeed);
+			xMultiplicator = -1;
+			yMultiplicator = -1;
         }
         else if (this.direction == "down")
         {
-            newX = startX
-			- (cos(
-				map(
-					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
-					0,
-					1,
-					0,
-					Math.PI * 2))
-			* this.moveSpeed);
-		    newY = startY
-			+ (sin(
-				map(
-					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
-					0,
-					1,
-					0,
-					Math.PI * 2))
-            * this.moveSpeed);
+			xMultiplicator = -1;
         }
         else if (this.direction == "left")
         {
-            newX = startX
-			+ (cos(
+		}
+		
+		newX = startX
+			+ xMultiplicator * (cos(
 				map(
 					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
+						(startX + this.noiseSeed) / this.mapReduction,
+						(startY + this.noiseSeed) / this.mapReduction),
 					0,
 					1,
 					0,
 					Math.PI * 2))
-			* this.moveSpeed);
+				* this.moveSpeed);
 		newY = startY
-			+ (sin(
+			+ yMultiplicator * (sin(
 				map(
 					noise(
-						(startX + this.noiseSeed) /  this.mapReduction,
-						(startY + this.noiseSeed) /  this.mapReduction),
+						(startX + this.noiseSeed) / this.mapReduction,
+						(startY + this.noiseSeed) / this.mapReduction),
 					0,
 					1,
 					0,
 					Math.PI * 2))
-            * this.moveSpeed);
-        }
+				* this.moveSpeed);
         
         this.location = createVector(
             newX,
