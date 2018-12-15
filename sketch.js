@@ -7,11 +7,11 @@ function setup()
 
 window.frequencyGlobal = 0;
 window.activeAgents = [];
-let numberOfModes = 2;
+let numberOfModes = 3;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
 window.fadeDrawing = false;
 
-if (window.currentMode == 1)
+if (window.currentMode == 1 || window.currentMode == 2)
 {
 	if (Math.random() > 0.5)
 	{
@@ -101,7 +101,20 @@ let sketchColor = function(sketch)
 									1 + 3 * Math.random(),
 									new VisualProperties(),
 									"left"
-							));
+								));
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									visualProps
+								));
 						}
 					break;
 					case 'C#':
@@ -118,6 +131,19 @@ let sketchColor = function(sketch)
 									new VisualProperties()
 							));
 						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									visualProps
+								));
+						}
 					break;
 					case 'D':
 						if (window.currentMode == 0)
@@ -125,6 +151,19 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									visualProps
+								));
 						}
 					break;
 					case 'D#':
@@ -140,6 +179,19 @@ let sketchColor = function(sketch)
 									1 + 3 * Math.random(),
 									new VisualProperties()
 							));
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									visualProps
+								));
 						}
 					break;
 					case 'E':
@@ -167,6 +219,19 @@ let sketchColor = function(sketch)
 									"right"
 							));
 						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									visualProps
+								));
+						}
 					break;
 					case 'F':
 						if (window.currentMode == 0)
@@ -182,6 +247,19 @@ let sketchColor = function(sketch)
 									new VisualProperties(),
 									"up"
 							));
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									visualProps
+								));
 						}
 					break;
 					case 'F#':
@@ -199,6 +277,19 @@ let sketchColor = function(sketch)
 									"down"
 							));
 						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 3;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
+						}
 					break;
 					case 'G':
 						if (window.currentMode == 0)
@@ -206,6 +297,19 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 3;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
 						}
 					break;
 					case 'G#':
@@ -215,6 +319,19 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 1)
 						{
 						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 3;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
+						}
 					break;
 					case 'A':
 						if (window.currentMode == 0)
@@ -222,6 +339,19 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 4;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
 						}
 					break;
 					case 'A#':
@@ -231,6 +361,19 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 1)
 						{
 						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 4;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
+						}
 					break;
 					case 'B':
 						if (window.currentMode == 0)
@@ -238,6 +381,19 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 4;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
 						}
 					break;
 					default:
