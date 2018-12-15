@@ -36,11 +36,11 @@ let sketchColor = function(sketch)
 	sketch.setup = function()
 	{
 		sketch.ctx = sketch.createCanvas(800,500).parent('cointainer-color');
+		sketch.ctx.id("generativeCanvas");
 		sketch.background(sketch.backgroundColor);
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
-		sketch.ctx.id("generativeCanvas");
 	}
 
 	sketch.draw = function()
@@ -64,6 +64,11 @@ let sketchColor = function(sketch)
 	{
 		sketch.pitch.getPitch(function(err, frequency)
 		{
+			if (err)
+			{
+				console.log(err);
+			}
+
 			if (window.fadeDrawing)
 			{
 				sketch.background(sketch.backgroundColor.slice(0, 7) + "11");
@@ -400,8 +405,9 @@ let sketchColor = function(sketch)
 					break;
 				}
 			}
+
 			sketch.getPitch();
-		})
+		});
 	}
 }
 
