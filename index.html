@@ -29,8 +29,22 @@
 
 	<div id="cointainer-color"></div>
 
-	<a href="#" id="downloader" onclick="downloadImage()" download="generativeArtByDavidGabathuelerAndSimonHischier.png">Download!</a>
+	<button onclick="startAudioContext()">Start!</button>
+	<button onclick="newSketch()">new Sketch!</button>
+	<button>
+		<a href="#" id="downloader" onclick="downloadImage()" download="generativeArtByDavidGabathuelerAndSimonHischier.png">Download!</a>
+	</button>
 	<script>
+		function startAudioContext()
+		{
+			p5SketchColor.audioContext.resume()
+		}
+
+		function newSketch()
+		{
+			document.location = document.location;
+		}
+
 		function downloadImage()
 		{
 			let canvas = document.getElementById("generativeCanvas");
