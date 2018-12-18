@@ -7,9 +7,9 @@ function setup()
 
 window.frequencyGlobal = 0;
 window.activeAgents = [];
-let numberOfModes = 4;
+let numberOfModes = 6;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
-//window.currentMode = 4;
+//window.currentMode = 5;
 window.fadeDrawing = false;
 
 if (window.currentMode == 0 || window.currentMode == 1 || window.currentMode == 2)
@@ -117,6 +117,32 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties()
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
