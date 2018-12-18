@@ -3,7 +3,9 @@
 let randomProperty = function (obj)
 {
     let keys = Object.keys(obj)
-    return obj[keys[ keys.length * Math.random() << 0]];
+    let key = keys[ keys.length * Math.random() << 0];
+    console.log(key)
+    return obj[key];
 };
 
 let SHAPES = Object.freeze({
@@ -32,7 +34,14 @@ let COLORPALETTE = randomProperty(
         "palette17": ["#FA7784FF","#FC948FFF", "#24AEB4FF", "#007A9BFF", "#002358FF"],
         "palette18": ["#642379FF","#FB5D78FF", "#E81F7AFF", "#42F3F5FF", "#2DF3CCFF"],
         "palette19": ["#730117FF","#191E24FF", "#008C5DFF", "#00593BFF", "#022417FF"],
-        "palette20": ["#0E5700FF","#FFB21DFF", "#1BA300FF", "#34E000FF", "#FFF200FF"]
+        "palette20": ["#0E5700FF","#FFB21DFF", "#1BA300FF", "#34E000FF", "#FFF200FF"],
+        "palette21": ["#004466FF","#016699FF", "#5BB7D4FF", "#E4E5E6FF", "#FF2105FF"],
+        "palette22": ["#72A6A6FF","#255959FF", "#012626FF", "#E4F2EDFF", "#D98F4EFF"],
+        "palette23": ["#B24441FF","#FFFFE3FF", "#FFCBCAFF", "#75A7CCFF", "#2174B2FF"],
+        "palette24": ["#4E7300FF","#708C01FF", "#A7C404FF", "#D4BC00FF", "#F5F5F5FF"],
+        "palette25": ["#8F4C8CFF","#EBC133FF", "#374B94FF", "#2DD3D6FF", "#427FC4FF"],
+        "palette26": ["#2E3834FF","#3D6A53FF", "#4A9888FF", "#A7DE6DFF", "#D4F082FF"],
+        "palette27": ["#F2EC9BFF","#D9AF32FF", "#A6751BFF", "#8C5511FF", "#731616FF"]
     });
     //"palette2": ["#FF","#FF", "#FF", "#FF", "#FF"],
 

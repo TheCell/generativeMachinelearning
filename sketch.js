@@ -9,7 +9,7 @@ window.frequencyGlobal = 0;
 window.activeAgents = [];
 let numberOfModes = 6;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
-//window.currentMode = 5;
+//window.currentMode = 0;
 window.fadeDrawing = false;
 
 if (window.currentMode == 0 || window.currentMode == 1 || window.currentMode == 2)
@@ -20,7 +20,7 @@ if (window.currentMode == 0 || window.currentMode == 1 || window.currentMode == 
 	}
 }
 
-console.log(`Mode: ${window.currentMode}, fading: ${window.fadeDrawing}`);
+console.log(`Mode: ${window.currentMode}, fading: ${window.fadeDrawing}, colorpalette: ${COLORPALETTE}`);
 
 let sketchColor = function(sketch)
 {
@@ -102,6 +102,13 @@ let sketchColor = function(sketch)
 					case 'A':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(0)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -149,6 +156,13 @@ let sketchColor = function(sketch)
 					case 'A#':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(1)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -170,6 +184,13 @@ let sketchColor = function(sketch)
 					case 'B':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(2)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -191,16 +212,13 @@ let sketchColor = function(sketch)
 					case 'C':
 						if (window.currentMode == 0)
 						{
-							if (window.activeAgents.length < 15)
-							{
-								spawnNewAgent(
-									new CircleAgentMode0C(
-										sketch.width / 2,
-										sketch.height / 2,
-										1 + 3 * Math.random(),
-										new VisualProperties(1)
-								));	
-							}
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(3)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -230,6 +248,13 @@ let sketchColor = function(sketch)
 					case 'C#':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(4)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -267,6 +292,13 @@ let sketchColor = function(sketch)
 					case 'D':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(5)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -288,6 +320,13 @@ let sketchColor = function(sketch)
 					case 'D#':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(6)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -316,16 +355,13 @@ let sketchColor = function(sketch)
 					case 'E':
 						if (window.currentMode == 0)
 						{
-							if (window.activeAgents.length < 7)
-							{
-								spawnNewAgent(
-									new CircleAgentMode0E(
-										sketch.width / 2,
-										sketch.height / 2,
-										1 + 3 * Math.random(),
-										new VisualProperties()
-								));
-							}
+							spawnNewAgent(
+								new CircleAgentMode0E(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(7)
+							));
 						}
 						else if (window.currentMode == 1)
 						{
@@ -355,6 +391,13 @@ let sketchColor = function(sketch)
 					case 'F':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(8)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -384,6 +427,13 @@ let sketchColor = function(sketch)
 					case 'F#':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(9)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -413,6 +463,13 @@ let sketchColor = function(sketch)
 					case 'G':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(10)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{
@@ -434,6 +491,13 @@ let sketchColor = function(sketch)
 					case 'G#':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new CircleAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(11)
+							));	
 						}
 						else if (window.currentMode == 1)
 						{

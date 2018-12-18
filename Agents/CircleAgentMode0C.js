@@ -64,7 +64,7 @@ class CircleAgentMode0C
         );
         
         // update properties to draw
-        this.angle = this.angle + (0.03 * Math.random());
+        this.angle = this.angle + (0.04 * Math.random());
         
         if (this.isShrinking)
         {
