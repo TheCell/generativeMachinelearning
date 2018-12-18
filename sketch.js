@@ -9,10 +9,10 @@ window.frequencyGlobal = 0;
 window.activeAgents = [];
 let numberOfModes = 4;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
-window.currentMode = 3;
+//window.currentMode = 4;
 window.fadeDrawing = false;
 
-if (window.currentMode == 1 || window.currentMode == 2)
+if (window.currentMode == 0 || window.currentMode == 1 || window.currentMode == 2)
 {
 	if (Math.random() > 0.5)
 	{
@@ -32,6 +32,21 @@ let sketchColor = function(sketch)
 	
 	//sketch.resetUserCanvas = true;
 	
+	/**
+	 * Note: frequence
+	 * C: 261
+	 * C#: 277
+	 * D: 293
+	 * D#: 311
+	 * E: 329
+	 * F: 249
+	 * F#: 369
+	 * G: 391
+	 * G#: 415
+	 * A: 440
+	 * A#: 466
+	 * B: 246
+	 */
 	sketch.scale = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 	
 	sketch.setup = function()
