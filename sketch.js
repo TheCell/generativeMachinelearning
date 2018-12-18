@@ -99,6 +99,69 @@ let sketchColor = function(sketch)
 				// BEHOLD: this is where the construction zone begins. I am sorry
 				switch(currentNote)
 				{
+					case 'A':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
+						}
+					break;
+					case 'A#':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
+						}
+					break;
+					case 'B':
+						if (window.currentMode == 0)
+						{
+						}
+						else if (window.currentMode == 1)
+						{
+						}
+						else if (window.currentMode == 2)
+						{
+							let visualProps = new VisualProperties();
+							visualProps.width = 2;
+
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									visualProps
+								));
+						}
+					break;
 					case 'C':
 						if (window.currentMode == 0)
 						{
@@ -127,7 +190,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 2;
+							visualProps.width = 3;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -155,7 +218,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 2;
+							visualProps.width = 3;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -185,7 +248,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 2;
+							visualProps.width = 3;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -213,7 +276,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 2;
+							visualProps.width = 4;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -252,7 +315,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 2;
+							visualProps.width = 4;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -281,7 +344,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 2;
+							visualProps.width = 4;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -310,7 +373,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 3;
+							visualProps.width = 6;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -331,7 +394,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 3;
+							visualProps.width = 6;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
@@ -352,70 +415,7 @@ let sketchColor = function(sketch)
 						else if (window.currentMode == 2)
 						{
 							let visualProps = new VisualProperties();
-							visualProps.width = 3;
-
-							spawnNewAgent(
-								new PerlinAgentMode0C(
-									sketch.width / 2,
-									sketch.height / 2,
-									1 + 3 * Math.random(),
-									visualProps
-								));
-						}
-					break;
-					case 'A':
-						if (window.currentMode == 0)
-						{
-						}
-						else if (window.currentMode == 1)
-						{
-						}
-						else if (window.currentMode == 2)
-						{
-							let visualProps = new VisualProperties();
-							visualProps.width = 4;
-
-							spawnNewAgent(
-								new PerlinAgentMode0C(
-									sketch.width / 2,
-									sketch.height / 2,
-									1 + 3 * Math.random(),
-									visualProps
-								));
-						}
-					break;
-					case 'A#':
-						if (window.currentMode == 0)
-						{
-						}
-						else if (window.currentMode == 1)
-						{
-						}
-						else if (window.currentMode == 2)
-						{
-							let visualProps = new VisualProperties();
-							visualProps.width = 4;
-
-							spawnNewAgent(
-								new PerlinAgentMode0C(
-									sketch.width / 2,
-									sketch.height / 2,
-									1 + 3 * Math.random(),
-									visualProps
-								));
-						}
-					break;
-					case 'B':
-						if (window.currentMode == 0)
-						{
-						}
-						else if (window.currentMode == 1)
-						{
-						}
-						else if (window.currentMode == 2)
-						{
-							let visualProps = new VisualProperties();
-							visualProps.width = 4;
+							visualProps.width = 6;
 
 							spawnNewAgent(
 								new PerlinAgentMode0C(
