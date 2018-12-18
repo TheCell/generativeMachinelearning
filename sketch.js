@@ -9,6 +9,7 @@ window.frequencyGlobal = 0;
 window.activeAgents = [];
 let numberOfModes = 3;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
+//window.currentMode = 0;
 window.fadeDrawing = false;
 
 if (window.currentMode == 1 || window.currentMode == 2)
@@ -125,6 +126,13 @@ let sketchColor = function(sketch)
 					case 'C#':
 						if (window.currentMode == 0)
 						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									Math.random(),
+									new VisualProperties()
+							));
 						}
 						else if (window.currentMode == 1)
 						{
