@@ -20,9 +20,6 @@ class SquareAgentMode0D
         this.livecycles = 200;
         this.isShrinking = true;
 
-        middlePointX = middlePointX - 250 + Math.floor(500 * Math.random());
-        middlePointY = middlePointY - 250 + Math.floor(500 * Math.random());
-
 		// set middle point
 		this.location = createVector(
 			middlePointX,
@@ -47,10 +44,8 @@ class SquareAgentMode0D
 		ctx.noStroke();
         
         ctx.push();
-            ctx.translate(this.location.x, this.location.y);
-            ctx.rotate(PI / 2 * Math.random());
-            ctx.rect(- this.visualProperties.width / 2, - this.visualProperties.width / 2, this.visualProperties.width, this.visualProperties.width);
-            //ctx.rect(this.location.x, this.location.y, this.visualProperties.width, this.visualProperties.width);
+            ctx.rotate(PI / Math.random(1,6));
+            ctx.rect(this.location.x, this.location.y, this.visualProperties.width, this.visualProperties.width);
         ctx.pop();
 		
 	}
@@ -63,9 +58,9 @@ class SquareAgentMode0D
         }
         
         let newX = this.points[this.points.length - 1].x
-            + ((sin(this.angle) / 2) * this.moveSpeed);
+			+ (sin(this.angle) * this.moveSpeed);
         let newY = this.points[this.points.length - 1].y
-            + ((cos(this.angle) / 2 ) * this.moveSpeed);
+            + (cos(this.angle) * this.moveSpeed);
 
         this.location = createVector(
             newX,
@@ -73,7 +68,7 @@ class SquareAgentMode0D
         );
         
         // update properties to draw
-        this.angle = this.angle + (0.025 * Math.random());
+        this.angle = this.angle + (0.01 * Math.random());
         
         if (this.isShrinking)
         {

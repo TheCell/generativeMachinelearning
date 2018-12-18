@@ -20,6 +20,9 @@ class SquareAgentMode0D
         this.livecycles = 200;
         this.isShrinking = true;
 
+        middlePointX = middlePointX - 250 + Math.floor(500 * Math.random());
+        middlePointY = middlePointY - 250 + Math.floor(500 * Math.random());
+
 		// set middle point
 		this.location = createVector(
 			middlePointX,
@@ -42,8 +45,14 @@ class SquareAgentMode0D
 
 		ctx.fill(this.visualProperties.color);
 		ctx.noStroke();
+        
+        ctx.push();
+            ctx.translate(this.location.x, this.location.y);
+            ctx.rotate(PI / 2 * Math.random());
+            ctx.rect(- this.visualProperties.width / 2, - this.visualProperties.width / 2, this.visualProperties.width, this.visualProperties.width);
+            //ctx.rect(this.location.x, this.location.y, this.visualProperties.width, this.visualProperties.width);
+        ctx.pop();
 		
-		ctx.rect(this.location.x, this.location.y, this.visualProperties.width, this.visualProperties.width);
 	}
 
 	updateCycle()
@@ -54,9 +63,9 @@ class SquareAgentMode0D
         }
         
         let newX = this.points[this.points.length - 1].x
-			+ (sin(this.angle) * this.moveSpeed);
+            + ((sin(this.angle) / 2) * this.moveSpeed);
         let newY = this.points[this.points.length - 1].y
-            + (cos(this.angle) * this.moveSpeed);
+            + ((cos(this.angle) / 2 ) * this.moveSpeed);
 
         this.location = createVector(
             newX,
@@ -64,13 +73,13 @@ class SquareAgentMode0D
         );
         
         // update properties to draw
-        this.angle = this.angle + (0.03 * Math.random());
+        this.angle = this.angle + (0.025 * Math.random());
         
         if (this.isShrinking)
         {
             this.visualProperties.width = this.visualProperties.width - 1;
 
-            if (this.visualProperties.width < 1)
+            if (this.visualProperties.width < 5)
             {
                 this.isShrinking = false;
             }
@@ -79,7 +88,7 @@ class SquareAgentMode0D
         {
             this.visualProperties.width = this.visualProperties.width + 1;
 
-            if (this.visualProperties.width > 10)
+            if (this.visualProperties.width > 20)
             {
                 this.isShrinking = true;
             }
@@ -88,7 +97,7 @@ class SquareAgentMode0D
         this.points.push(this.location);
         this.livecycles = this.livecycles - 1;
 
-        if (this.livecycles < 0)
+        if (this.livecycles < 8)
         {
             this.agentAlive = false;
         }
