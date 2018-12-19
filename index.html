@@ -34,16 +34,17 @@
 
 	<div id="cointainer-color"></div>
 
-	<button onclick="startAudioContext()">Start!</button>
+	<button onclick="startAudioContext(this)" id="startButton" disabled>Start!</button>
 	<button onclick="newSketch()">new Sketch!</button>
 	<button>
 		<a href="#" id="downloader" onclick="downloadImage()" download="generativeArtByDavidGabathuelerAndSimonHischier.png">Download!</a>
 	</button>
 	<div id="modeInfo"></div>
 	<script>
-		function startAudioContext()
+		function startAudioContext(btn)
 		{
-			p5SketchColor.audioContext.resume()
+			p5SketchColor.audioContext.resume();
+			btn.disabled = true;
 		}
 
 		function newSketch()

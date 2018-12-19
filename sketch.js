@@ -14,7 +14,7 @@ window.fadeDrawing = false;
 
 if (window.currentMode == 0 || window.currentMode == 1 || window.currentMode == 2)
 {
-	if (Math.random() > 0.5)
+	if (Math.random() > 0.7)
 	{
 		window.fadeDrawing = true;
 	}
@@ -57,6 +57,11 @@ let sketchColor = function(sketch)
 		sketch.audioContext = getAudioContext();
 		sketch.mic = new p5.AudioIn();
 		sketch.mic.start(sketch.startPitch);
+
+		if (sketch.audioContext.state !== 'running')
+		{
+			document.getElementById("startButton").disabled = false;
+		}
 	}
 
 	sketch.draw = function()
