@@ -80,7 +80,7 @@ let sketchColor = function(sketch)
 	sketch.modelLoaded = function ()
 	{
 		sketch.updateGlobalFrequency();
-		sketch.drawAgents();
+		sketch.spawnAgents();
 	}
 
 	sketch.updateGlobalFrequency = function ()
@@ -101,7 +101,7 @@ let sketchColor = function(sketch)
 		});
 	}
 	
-	sketch.drawAgents = function ()
+	sketch.spawnAgents = function ()
 	{
 		if (window.frequencyGlobal)
 		{
@@ -974,11 +974,11 @@ let sketchColor = function(sketch)
 
 		if (window.fadeDrawing)
 		{
-			setTimeout(sketch.drawAgents, 100);
+			setTimeout(sketch.spawnAgents, 100);
 		}
 		else
 		{
-			setTimeout(sketch.drawAgents, 300);
+			setTimeout(sketch.spawnAgents, 300);
 		}
 	}
 }
