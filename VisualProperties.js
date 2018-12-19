@@ -57,8 +57,40 @@ class VisualProperties
         else
         {
             color = COLORPALETTE[(colorIndex % (COLORPALETTE.length - 1))]
+            if (colorIndex > 4)
+            {
+                let hexColor = color.slice(0, 7);
+                let rgbColor = hexToRgb(hexColor);
+                rgbColor.r = parseInt(rgbColor.r * 0.5);
+                rgbColor.g = parseInt(rgbColor.g * 0.5);
+                rgbColor.b = parseInt(rgbColor.b * 0.5);
+                hexColor = rgbToHex(rgbColor.r, rgbColor.g, rgbColor.b);
+                color = hexColor + "FF";
+            }
+            //console.log(`${colorIndex} + ${color}`);
         }
         this.color = color;
         this.width = 10;
     }
+}
+
+function hexToRgb(hex)
+{
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+function componentToHex(c)
+{
+    let hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b)
+{
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
