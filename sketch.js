@@ -112,10 +112,17 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(0)
+							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(0);
 							visualProps.width = 2;
 
 							spawnNewAgent(
@@ -126,6 +133,16 @@ let sketchColor = function(sketch)
 									visualProps
 								));
 						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(0)
+							));
+						}
 						else if (window.currentMode == 4)
 						{
 							spawnNewAgent(
@@ -133,7 +150,7 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties()
+									new VisualProperties(0)
 								));
 						}
 						else if (window.currentMode == 5)
@@ -145,7 +162,7 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties(),
+									new VisualProperties(0),
 									undefinedVar,
 									random(0, Math.PI * 2),
 									sketch.width,
@@ -166,10 +183,17 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(1)
+							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(1);
 							visualProps.width = 2;
 
 							spawnNewAgent(
@@ -178,6 +202,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(1)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(1)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(1),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -194,10 +254,17 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(2)
+							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(2);
 							visualProps.width = 2;
 
 							spawnNewAgent(
@@ -206,6 +273,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(2)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(2)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(2),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -227,13 +330,13 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties(),
+									new VisualProperties(3),
 									"left"
 								));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(3);
 							visualProps.width = 3;
 
 							spawnNewAgent(
@@ -242,6 +345,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 2 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(3)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(3)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(3),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -263,12 +402,12 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties()
+									new VisualProperties(4)
 							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(4);
 							visualProps.width = 3;
 
 							spawnNewAgent(
@@ -285,8 +424,34 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 2 * Math.random(),
-									new VisualProperties()
+									new VisualProperties(4)
 							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(4)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(4),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
+								));
 						}
 					break;
 					case 'D':
@@ -302,10 +467,17 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(5)
+							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(5);
 							visualProps.width = 3;
 
 							spawnNewAgent(
@@ -314,6 +486,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 2 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(5)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(5)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(5),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -335,12 +543,12 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties()
+									new VisualProperties(6)
 							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(6);
 							visualProps.width = 4;
 
 							spawnNewAgent(
@@ -349,6 +557,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 2 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(6)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(6)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(6),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -370,13 +614,13 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties(),
+									new VisualProperties(7),
 									"right"
 							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(7);
 							visualProps.width = 4;
 
 							spawnNewAgent(
@@ -385,6 +629,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 2 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(7)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(7)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(7),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -406,13 +686,13 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties(),
+									new VisualProperties(8),
 									"up"
 							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(8);
 							visualProps.width = 4;
 
 							spawnNewAgent(
@@ -421,6 +701,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 2 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(8)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(8)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(8),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -442,13 +758,13 @@ let sketchColor = function(sketch)
 									sketch.width / 2,
 									sketch.height / 2,
 									1 + 3 * Math.random(),
-									new VisualProperties(),
+									new VisualProperties(9),
 									"down"
 							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(9);
 							visualProps.width = 6;
 
 							spawnNewAgent(
@@ -457,6 +773,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(9)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(9)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(9),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -473,10 +825,17 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(10)
+							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(10);
 							visualProps.width = 6;
 
 							spawnNewAgent(
@@ -485,6 +844,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(10)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(10)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(10),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -501,10 +896,17 @@ let sketchColor = function(sketch)
 						}
 						else if (window.currentMode == 1)
 						{
+							spawnNewAgent(
+								new PerlinAgentMode0C(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(11)
+							));
 						}
 						else if (window.currentMode == 2)
 						{
-							let visualProps = new VisualProperties();
+							let visualProps = new VisualProperties(11);
 							visualProps.width = 6;
 
 							spawnNewAgent(
@@ -513,6 +915,42 @@ let sketchColor = function(sketch)
 									sketch.height / 2,
 									1 + 3 * Math.random(),
 									visualProps
+								));
+						}
+						else if (window.currentMode == 3)
+						{
+							spawnNewAgent(
+								new SquareAgentMode0D(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 2 * Math.random(),
+									new VisualProperties(11)
+							));
+						}
+						else if (window.currentMode == 4)
+						{
+							spawnNewAgent(
+								new FrequencyAgent(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(11)
+								));
+						}
+						else if (window.currentMode == 5)
+						{
+							let undefinedVar;
+
+							spawnNewAgent(
+								new FrequencyAgentSmooth(
+									sketch.width / 2,
+									sketch.height / 2,
+									1 + 3 * Math.random(),
+									new VisualProperties(11),
+									undefinedVar,
+									random(0, Math.PI * 2),
+									sketch.width,
+									sketch.height
 								));
 						}
 					break;
@@ -527,7 +965,7 @@ let sketchColor = function(sketch)
 			}
 			else
 			{
-				setTimeout(sketch.getPitch, 500);
+				setTimeout(sketch.getPitch, 300);
 			}
 		});
 	}
