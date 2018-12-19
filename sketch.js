@@ -230,6 +230,7 @@ let sketchColor = function(sketch)
 					}
 				break;
 				default:
+					visualProps = new VisualProperties();
 				break;
 			}
 
