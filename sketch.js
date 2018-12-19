@@ -62,6 +62,8 @@ let sketchColor = function(sketch)
 		{
 			document.getElementById("startButton").disabled = false;
 		}
+
+		document.bgColor = sketch.backgroundColor.slice(0, 7);
 	}
 
 	sketch.draw = function()
