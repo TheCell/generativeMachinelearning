@@ -20,8 +20,8 @@ if (window.currentMode == 0 || window.currentMode == 1 || window.currentMode == 
 	}
 }
 
-document.getElementById("modeInfo").innerHTML = `Mode: ${window.currentMode}, fading: ${window.fadeDrawing}, colorpalette: ${COLORPALETTE}`;
-console.log(`Mode: ${window.currentMode}, fading: ${window.fadeDrawing}, colorpalette: ${COLORPALETTE}`);
+document.getElementById("modeInfo").innerHTML = `Mode: ${window.currentMode}, fading: ${window.fadeDrawing}, colorpalette(${colorPaletteKey}): ${COLORPALETTE}`;
+console.log(`Mode: ${window.currentMode}, fading: ${window.fadeDrawing}, colorpalette(${colorPaletteKey}): ${COLORPALETTE}`);
 
 let sketchColor = function(sketch)
 {

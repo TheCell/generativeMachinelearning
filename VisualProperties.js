@@ -1,10 +1,12 @@
 "use strict";
 
+let colorPaletteKey = "";
+
 let randomProperty = function (obj)
 {
     let keys = Object.keys(obj)
     let key = keys[ keys.length * Math.random() << 0];
-    console.log(key)
+    colorPaletteKey = key;
     return obj[key];
 };
 
