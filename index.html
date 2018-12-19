@@ -32,6 +32,12 @@
 		{
 			border: 1px solid black;
 		}
+
+		#modeInfo, #buttonRow
+		{
+			background-color: white;
+			padding: 6px;
+		}
 	</style>
 </head>
 
@@ -40,11 +46,13 @@
 
 	<div id="cointainer-color"></div>
 
-	<button onclick="startAudioContext(this)" id="startButton" disabled>Start!</button>
-	<button onclick="newSketch()">new Sketch!</button>
-	<button>
-		<a href="#" id="downloader" onclick="downloadImage()" download="generativeArtByDavidGabathuelerAndSimonHischier.png">Download!</a>
-	</button>
+	<div id="buttonRow">
+		<button onclick="startAudioContext(this)" id="startButton" disabled>Start!</button>
+		<button onclick="newSketch()">new Sketch!</button>
+		<button>
+			<a href="#" id="downloader" onclick="downloadImage()" download="generativeArtByDavidGabathuelerAndSimonHischier.png">Download!</a>
+		</button>
+	</div>
 	<div id="modeInfo"></div>
 	<script>
 		function startAudioContext(btn)
