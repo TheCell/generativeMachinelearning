@@ -97,6 +97,7 @@ let sketchColor = function(sketch)
 				let currentNote = sketch.scale[midiNum % 12];
 
 				// BEHOLD: this is where the construction zone begins. I am sorry
+				// If I die you are responsible that nobody will ever have to read through this. KILL IT
 				switch(currentNote)
 				{
 					case 'A':
