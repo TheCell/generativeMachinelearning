@@ -29,7 +29,6 @@ let sketchColor = function(sketch)
 	sketch.pitch;
 	sketch.ctx;
 	sketch.backgroundColor = COLORPALETTE[COLORPALETTE.length * Math.random() << 0];
-	
 	//sketch.resetUserCanvas = true;
 	
 	/**
@@ -63,6 +62,12 @@ let sketchColor = function(sketch)
 	{
 		updateAgents(window.activeAgents);
 		cleanDeadAgents(window.activeAgents, false);
+		
+		if (window.fadeDrawing)
+		{
+			sketch.background(sketch.backgroundColor.slice(0, 7) + "11");
+		}
+
 		drawAgents(window.activeAgents, sketch);
 	}
 	
@@ -83,11 +88,6 @@ let sketchColor = function(sketch)
 			if (err)
 			{
 				console.log(err);
-			}
-
-			if (window.fadeDrawing)
-			{
-				sketch.background(sketch.backgroundColor.slice(0, 7) + "11");
 			}
 
 			if (frequency)
@@ -521,7 +521,14 @@ let sketchColor = function(sketch)
 				}
 			}
 
-			sketch.getPitch();
+			if (window.fadeDrawing)
+			{
+				setTimeout(sketch.getPitch, 100);
+			}
+			else
+			{
+				setTimeout(sketch.getPitch, 500);
+			}
 		});
 	}
 }

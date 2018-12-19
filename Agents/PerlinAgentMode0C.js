@@ -28,7 +28,7 @@ class PerlinAgentMode0C
         this.direction = direction;
 
         this.noiseSeed = Math.floor(Math.random() * 10000);
-        this.mapReduction = 100;
+        this.mapReduction = 90 + Math.random() * 20;
 
         middlePointX = middlePointX - 50 + Math.floor(100 * Math.random());
         middlePointY = middlePointY - 50 + Math.floor(100 * Math.random());
