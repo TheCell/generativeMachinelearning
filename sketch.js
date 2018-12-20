@@ -7,9 +7,9 @@ function setup()
 
 window.frequencyGlobal = 0;
 window.activeAgents = [];
-let numberOfModes = 6;
+let numberOfModes = 7;
 window.currentMode = getRandomInt(numberOfModes); // 0 based
-//window.currentMode = 0;
+//window.currentMode = 6;
 window.fadeDrawing = false;
 
 if (window.currentMode == 0 || window.currentMode == 1 || window.currentMode == 2)
@@ -312,6 +312,16 @@ let sketchColor = function(sketch)
 						random(0, Math.PI * 2),
 						sketch.width,
 						sketch.height
+				));
+			}
+			else if (window.currentMode == 6)
+			{
+				spawnNewAgent(
+					new TriangleAgentMode0D(
+						sketch.width / 2,
+						sketch.height / 2,
+						2 * Math.random(),
+						visualProps
 				));
 			}
 		}
