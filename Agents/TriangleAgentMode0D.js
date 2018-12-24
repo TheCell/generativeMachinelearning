@@ -54,8 +54,8 @@ class TriangleAgentMode0D
 		}
 
 		ctx.fill(this.visualProperties.color);
-		
-        
+
+
         ctx.push();
             ctx.noStroke();
             ctx.triangle(this.location.x, this.location.y, this.location.x + 10, this.location.y - 17, this.location.x + 20, this.location.y);
@@ -65,9 +65,7 @@ class TriangleAgentMode0D
             ctx.strokeWeight(1);
             ctx.stroke(0,0,0,20);
             ctx.line(this.locationLine.x-20, this.locationLine.y-40, this.locationLine.x + 20, this.location.y + 20);
-            
         ctx.pop();
-		console.log(this.visualProperties.color);
 	}
 
 	updateCycle()
@@ -76,7 +74,7 @@ class TriangleAgentMode0D
 		{
 			return;
         }
-        
+
         let newX = this.points[this.points.length - 1].x
             + ((cos(this.angle) / 2) * this.moveSpeed*2);
         let newY = this.points[this.points.length - 1].y
@@ -95,12 +93,12 @@ class TriangleAgentMode0D
             newLineX,
             newLineY
         );
-        
+
         // update properties to draw
         this.angle = this.angle + (Math.random() / 10);
         this.angleLine = this.angleLine + 90;
-        
- 
+
+
 
         this.points.push(this.location);
         this.pointsLine.push(this.locationLine);
