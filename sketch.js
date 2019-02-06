@@ -1,4 +1,7 @@
 "use strict";
+// For perf optimisation, 
+// https://github.com/processing/p5.js/wiki/Optimizing-p5.js-Code-for-Performance#p5-performance-tips
+p5.disableFriendlyErrors = true; // disables FES
 
 function setup()
 {
@@ -51,7 +54,7 @@ let sketchColor = function(sketch)
 	
 	sketch.setup = function()
 	{
-		sketch.ctx = sketch.createCanvas(800,500).parent('cointainer-color');
+		sketch.ctx = sketch.createCanvas(windowWidth, windowHeight).parent('cointainer-color');
 		sketch.ctx.id("generativeCanvas");
 		sketch.background(sketch.backgroundColor);
 		sketch.audioContext = getAudioContext();
