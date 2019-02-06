@@ -31,30 +31,96 @@
 	<style>
 		canvas
 		{
-			border: 1px solid black;
+      position: absolute;
 		}
+
+    body
+    {
+      margin: 0;
+      font-family: Helvetica, Arial, Sans-Serif;
+    }
+
+    #footer {
+      position:absolute;
+      width:100%;
+      bottom:0px;      
+    }
 
 		#modeInfo, #buttonRow
 		{
-			background-color: white;
+			/*background-color: white;*/
+      color: grey;
 			padding: 6px;
 		}
+
+    #overlay 
+    {
+      position: fixed; /* Sit on top of the page content */
+      display: none; /* Hidden by default */
+      width: 100%; /* Full width (cover the whole page) */
+      height: 100%; /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+      z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+      cursor: pointer; /* Add a pointer on hover */
+    }
+
+    #title
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    #subtitle
+    {
+      font-size: 20px;
+    }
+
 	</style>
 </head>
 
 <body>
+  <!-- Added for Chrome -->
+<div id="overlay" onclick="off(); startAudioContext(this);">
+  <div id="title">
+    <p>Click to view<br><span id="subtitle">Please be patient during loading</span></p>
+  </div>
+</div>
 	<div id="container"></div>
 
 	<div id="cointainer-color"></div>
+  
+  <div id="footer">
+    <div id="buttonRow">
+      <button onclick="startAudioContext(this)" id="startButton" disabled>Start!</button>
+      <button onclick="newSketch()">new Sketch!</button>
+      <button onclick="downloadImage()">
+        <a href="#" id="downloader" download="generativeArtByDavidGabathuelerAndSimonHischier.png">Download!</a>
+      </button>
+    </div>
+    <div id="modeInfo"></div>    
+  </div>
 
-	<div id="buttonRow">
-		<button onclick="startAudioContext(this)" id="startButton" disabled>Start!</button>
-		<button onclick="newSketch()">new Sketch!</button>
-		<button onclick="downloadImage()">
-			<a href="#" id="downloader" download="generativeArtByDavidGabathuelerAndSimonHischier.png">Download!</a>
-		</button>
-	</div>
-	<div id="modeInfo"></div>
+  <script type="text/javascript">
+    function on() 
+    {
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() 
+    {
+      document.getElementById("overlay").style.display = "none";
+    } 
+
+    window.onload = on;
+  </script>
 	<script>
 		function startAudioContext(btn)
 		{
